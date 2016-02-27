@@ -11,25 +11,37 @@
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
-    <!-- ionic/angularjs js -->
+        <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic/js/angular-ui/angular-ui-router.min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-cookies.min.js"></script>
+
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/login/loginController.js"></script>
-    <script src="js/register/registrationController.js"></script>
     <script src="js/platform_services/authService.js"></script>
     <script src="js/platform_services/registrationService.js"></script>
+    <script src="js/login/loginController.js"></script>
+    <script src="js/register/registrationController.js"></script>
+    <script src="js/searchPage/searchPageController.js"></script>
+    <script src="js/jobs/jobsMasterListController.js"></script>
+    <script src="js/contacts/contactsMasterListController.js"></script>
+    <script>
+    
+    </script>
   </head>
   <body ng-app="org">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Project Organize</h1>
+        <div ng-show = "loggedIn" class="button-bar">
+          <a class="button">First</a>
+          <a class="button">Second</a>
+          <a class="button">Third</a>
+        </div>
+        <h1 ng-show = "!loggedIn" class="title">Project Organize</h1>
       </ion-header-bar>
       <ion-content>
       <div ui-view></div>

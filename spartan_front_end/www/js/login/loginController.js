@@ -9,6 +9,9 @@ var loginController = function($scope, AuthService){
 	vm.login = function() {
 		AuthService.logIn(vm.user.username, vm.user.password);
 	};
+	vm.logedIn = function() {
+		AuthService.loggedIn();
+	};
 };
 loginController.$inject = ['$scope', 'AuthService'];
 

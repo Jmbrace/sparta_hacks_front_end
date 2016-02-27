@@ -1,17 +1,17 @@
 (function(){
 
-var registrationController = function($scope, regiService){
+var registrationController = function($scope, RegistrationService){
 	vm = this;
 	vm.user = {};
 	vm.user.username = undefined;
 	vm.user.password = undefined;
-	vm.user.name = undefined;
 
 	vm.createProfile = function() {
-		regiService.create(vm.user.username, vm.user.password);
+		console.log(vm.user.username);
+		RegistrationService.create(vm.user.username, vm.user.password);
 	};
 };
-registrationController.$inject = ['$scope', 'AuthService'];
+registrationController.$inject = ['$scope', 'RegistrationService'];
 
 angular.module('org').controller('registrationController', registrationController);
 })();
