@@ -1,11 +1,29 @@
-// Ionic Starter App
+// Ionic org App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'org' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+var spartaApp = angular.module('org', ['ionic','ui.router'])
 
-.run(function($ionicPlatform) {
+spartaApp.config(function($stateProvider, $urlRouterProvider){
+
+$urlRouterProvider.otherwise("/login");
+
+$stateProvider
+    .state('login', {
+      url: "/login",
+      templateUrl: "js/login/loginPartial.html",
+      controller: "loginController as loginctrl"
+    })
+    .state('register', {
+      url: "/register",
+      templateUrl: "js/register/registrationPartial.html",
+      controller: "registrationController as regisctrl"
+    })
+});
+
+
+spartaApp.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,4 +39,6 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-})
+
+ })
+
