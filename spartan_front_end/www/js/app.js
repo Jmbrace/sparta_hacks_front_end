@@ -8,9 +8,13 @@ var spartaApp = angular.module('org', ['ionic','ui.router','ngCookies'])
 spartaApp.config(function($stateProvider, $urlRouterProvider, $httpProvider){
 
 
-$urlRouterProvider.otherwise("/login");
+$urlRouterProvider.otherwise("/splash");
 
 $stateProvider
+    .state('splash', {
+      url: "/splash",
+      templateUrl: "js/splash/splashPartial.html"
+    })
     .state('login', {
       url: "/login",
       templateUrl: "js/login/loginPartial.html"
@@ -52,4 +56,3 @@ spartaApp.run(function($ionicPlatform) {
   });
 
  })
-

@@ -1,6 +1,6 @@
 (function(){
 
-var loginController = function($scope, AuthService){
+var loginController = function($scope, AuthService,$state){
 	vm = this;
 	vm.user = {};
 	vm.user.username = undefined;
@@ -13,7 +13,7 @@ var loginController = function($scope, AuthService){
 		AuthService.loggedIn();
 	};
 };
-loginController.$inject = ['$scope', 'AuthService'];
+loginController.$inject = ['$scope', 'AuthService','$state'];
 
 angular.module('org').controller('loginController', loginController);
 })();

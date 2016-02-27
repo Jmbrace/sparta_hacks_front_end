@@ -20,12 +20,13 @@ var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
             },
             data: {username: username, password: password}
         }).success(function (response, status, header){
-            console.log($cookies.get('connect.sid'));
+      			$state.go('search');
+            //console.log($cookies.get('connect.sid'));
         }).error(function (response){
-            console.log("error");
-        })
+            //console.log("error");
+        });
     },
- 
+
         logOut: function() {
 
         console.log("signing out");
@@ -64,8 +65,8 @@ var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
         }).success(function (response){
             callback(true);
         }).error(function (response){
-            callback(false;
-        })
+            callback(false);
+        });
         }
     }
 };
