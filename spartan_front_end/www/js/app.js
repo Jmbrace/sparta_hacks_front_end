@@ -40,6 +40,14 @@ $stateProvider
         }
       }
     })
+    .state('home.jobs-single',{
+      url:'/jobs/:id',
+      views:{
+        'jobs':{
+          templateUrl:'js/jobs/jobPartial.html'
+        }
+      }
+    })
     .state('home.contacts',{
       url:'/contacts',
       views:{
@@ -47,15 +55,8 @@ $stateProvider
           templateUrl:'js/contacts/contactsMasterListPartial.html'
         }
       }
-    })
-    .state('home.jobs.jobId',{
-      url:'/jobs/:id',
-      views:{
-        'jobs':{
-          templateUrl:'js/jobs/jobPartial.html'
-        }
-      }
     });
+
 
     $urlRouterProvider.otherwise("/home");
     // .state('search', {

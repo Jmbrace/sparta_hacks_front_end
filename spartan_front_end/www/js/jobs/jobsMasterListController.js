@@ -14,7 +14,7 @@ var jobsMasterListController = function($scope, $state, jobsService){
 
 	vm.goToJob = function(job) {
 		jobsService.setJob(job);
-		$state.go('home.jobs.jobId');
+		//$state.go('home.job');
 	};
 };
 jobsMasterListController.$inject = ['$scope', '$state', 'jobsService'];

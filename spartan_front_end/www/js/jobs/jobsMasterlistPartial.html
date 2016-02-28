@@ -1,7 +1,10 @@
-<ion-content class="list list-inset" ng-controller= "jobsMasterListController as jobsctrl">
-<ion-list class="list card">
- <ion-item class="item" collection-repeat="job in jobsctrl.jobs">
-    <div ng-click = "jobsctrl.goToJob(job)">{{job.name}}</div>
-</ion-item>
-</ion-list>
+<ion-view view-title="Your Jobs" ng-controller= "jobsMasterListController as jobsctrl">
+  <ion-content>
+    <ion-list class="list">
+       <ion-item class="item" collection-repeat="job in jobsctrl.jobs">
+          <!-- <div ng-click = "jobsctrl.goToJob(job)">{{job.name}}</div> -->
+          <a href="#/home/jobs/{{job.id}}" class="button button-block">{{job.name}}</a>
+      </ion-item>
+    </ion-list>
 </ion-content>
+</ion-view>
