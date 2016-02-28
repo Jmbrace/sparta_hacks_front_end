@@ -1,1 +1,32 @@
 <!--This file is an html partial for a single contact -->
+<ion-view ng-controller= "contactsMasterListController as conCtrl" view-title="{{conCtrl.getSelectedContact().name}}">
+  <ion-content class="padding">
+     <button ng-click="conCtrl.seeContacts()" class="button button-block button-balanced">My Contact List</button>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Full Name</span>
+         <p >{{conCtrl.getSelectedContact().name}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Job Title</span>
+         <p >{{conCtrl.getSelectedContact().position}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Company Name</span>
+         <p >{{conCtrl.getSelectedContact().companyName}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Relevant Job</span>
+         <p>{{conCtrl.getSelectedContact().relevantJobId}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Phone Number</span>
+         <p>{{conCtrl.getSelectedContact().phone}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Email</span>
+         <p>{{conCtrl.getSelectedContact().email}}</p>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

@@ -2,9 +2,9 @@
   <ion-content>
     <ion-list class="list">
        <ion-item class="item" collection-repeat="job in jobsctrl.jobs">
-          <!-- <div ng-click = "jobsctrl.goToJob(job)">{{job.name}}</div> -->
-          <a href="#/home/jobs/{{job.id}}" class="button button-block">{{job.name}}</a>
-      </ion-item>
+          <div ng-click = "jobsctrl.goToJob(job)">{{job.title}}</div>
+<!--           <a href="#/home/jobs/{{job.id}}" class="button button-block">{{job.name}}</a>
+ -->      </ion-item>
     </ion-list>
 </ion-content>
 </ion-view>

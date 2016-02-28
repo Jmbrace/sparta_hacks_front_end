@@ -1,10 +1,9 @@
 <ion-view view-title="Your Contacts">
   <ion-content ng-controller= "contactsMasterListController as contactsctrl">
     <ion-list class="list">
-
        <ion-item class="item" collection-repeat="contact in contactsctrl.contacts">
-          {{contact}}
-    </ion-item>
+          <div ng-click = "contactsctrl.goToContact(contact)">{{contact.name}}</div>    </ion-item>
     </ion-list>
+     <button ng-click="contactsctrl.newContact()" class="button button-block button-balanced">Add New Contact</button>
   </ion-content>
 </ion-view>

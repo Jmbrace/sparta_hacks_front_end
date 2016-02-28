@@ -2,6 +2,7 @@
 
 var jobsService = function() {
     var jobModel = {};
+    var jobStore = [];
 
     return {
         getJob: function(){
@@ -14,6 +15,12 @@ var jobsService = function() {
 
         flushJob: function(){
             jobModel = {};
+        },
+        pushJob: function(job){
+            jobStore.push(job);
+        },
+        getJobList: function(){
+            return jobStore;
         }
     }
 };

@@ -2,30 +2,30 @@
   <ion-content class="padding" ng-controller="contactsMasterListController as conCtrl">
     <div class="list">
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="conCtrl.contactToAdd.firstName">First Name</span>
-        <input type="text" placeholder="Lead Software Engineer">
+        <span class="input-label" >Name</span>
+        <input type="text" ng-model="conCtrl.contactToAdd.name" placeholder="Bob Smith">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="conCtrl.contactToAdd.lastName">Last Name</span>
-        <input type="text" placeholder="Lead Software Engineer">
+        <span class="input-label" >Job Title</span>
+        <input type="text" ng-model="conCtrl.contactToAdd.position" placeholder="VP of Marketing">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="conCtrl.contactToAdd.companyName">Company Name</span>
-        <input type="text" placeholder="Lead Software Engineer">
+        <span class="input-label" >Company Name</span>
+        <input type="text" ng-model="conCtrl.contactToAdd.companyName" placeholder="Microsoft">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="conCtrl.contactToAdd.relavantJob">Relevant Job</span>
-        <input type="text" placeholder="(If Applicable)">
+        <span class="input-label">Relevant Job</span>
+        <input type="text" ng-model="conCtrl.contactToAdd.relevantJobId"  placeholder="(If Applicable) ">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="conCtrl.contactToAdd.number">Phone Number</span>
-        <input type="text" placeholder="69">
+        <span class="input-label" >Phone Number</span>
+        <input type="tel" ng-model="conCtrl.contactToAdd.phone" placeholder="1 (234) 567 8900">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="conCtrl.contactToAdd.email">Email</span>
-        <input type="text" placeholder="Mountatin View, Ca">
+        <span class="input-label" >Email</span>
+        <input type="email" ng-model="conCtrl.contactToAdd.email" placeholder="email@domain.com">
       </label>
     </div>
-    <button ng-click="conCtrl.submitManual()" class="button button-block button-balanced">Add</button>
+    <button ng-click="conCtrl.submitContact()" class="button button-block button-balanced">Add</button>
   </ion-content>
 </ion-view>

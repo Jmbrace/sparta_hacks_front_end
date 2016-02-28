@@ -2,6 +2,8 @@
 
 var searchPageController = function($scope,$state){
 	vm = this;
+
+	
 	vm.keyword = undefined;
 	vm.location = undefined;
 

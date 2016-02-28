@@ -63,6 +63,22 @@ $stateProvider
           templateUrl:'js/contacts/contactsMasterListPartial.html'
         }
       }
+    })
+    .state('home.contacts-single',{
+      url:'/contact/:id',
+      views:{
+        'contacts':{
+          templateUrl:'js/contacts/contactPartial.html'
+        }
+      }
+    })
+    .state('home.addContact',{
+      url:'/addcontact',
+      views:{
+        'contacts':{
+          templateUrl:'js/contacts/addNewContactPartial.html'
+        }
+      }
     });
 
 

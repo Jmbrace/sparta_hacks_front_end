@@ -2,17 +2,28 @@
   <ion-content class="padding" ng-controller="jobsMasterListController as jobsCtrl">
     <div class="list">
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="jobsCtrl.jobToAdd.title">Job Title</span>
-        <input type="text" placeholder="Lead Software Engineer">
+        <span class="input-label" >Job Title</span>
+        <input type="text" ng-model="jobsCtrl.jobToAdd.name" placeholder="Lead Software Engineer">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="jobsCtrl.jobToAdd.companyName">Company Name</span>
-        <input type="text" placeholder="Google">
+        <span class="input-label" >Company Name</span>
+        <input type="text" ng-model="jobsCtrl.jobToAdd.companyName" placeholder="Google">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label" ng-model="jobsCtrl.jobToAdd.location">Location</span>
-        <input type="text" placeholder="Mountatin View, Ca">
+        <span class="input-label" >Location</span>
+        <input type="text" ng-model="jobsCtrl.jobToAdd.location" placeholder="Mountatin View, Ca">
       </label>
+ <label class="item item-input item-select">
+    <div class="input-label">
+      Status
+    </div>
+    <select ng-model="jobsCtrl.jobToAdd.status">
+      <option selected>Interested</option>
+      <option>Applied</option>
+      <option>interviewed</option>
+      <option>Offered</option>
+    </select>
+  </label>
     </div>
     <button ng-click="jobsCtrl.submitManual()" class="button button-block button-balanced">Add</button>
   </ion-content>

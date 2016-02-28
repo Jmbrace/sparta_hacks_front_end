@@ -18,10 +18,10 @@ var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
       }
     }).success(function (response, status, header){
       $window.sessionStorage.showNav = true;
-      //$state.go('search');
+      $state.go('home');
     }).error(function (response){
       $window.sessionStorage.showNav  = false;
-      //$state.go('login');
+      $state.go('login');
     })
     },
     showNav: $window.sessionStorage.showNav

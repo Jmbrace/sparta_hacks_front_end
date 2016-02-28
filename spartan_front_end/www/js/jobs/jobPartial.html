@@ -4,6 +4,34 @@ DESCRITPTION STATUS
 LIST OF CONTACTS RELAVANT TO THAT JOB
 BUTTON TO ADD CONTACT
 -->
-<ion-content>
-
-</ion-content>
+<ion-view ng-controller= "jobsMasterListController as jobCtrl" view-title="{{jobCtrl.getSelectedJob().name}}">
+  <ion-content class="padding">
+    <button ng-click="jobCtrl.seeJobs()" class="button button-block button-balanced">My Jobs List</button>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" >Job Title</span>
+         <p >{{jobCtrl.getSelectedJob().title}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" >Company Name</span>
+        <p >{{jobCtrl.getSelectedJob().company.name}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" >Location</span>
+         <p >{{jobCtrl.getSelectedJob().location}}</p>
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" >Job Status</span>
+         <p >{{jobCtrl.getSelectedJob().status}}</p>
+      </label>
+         <div class = "padding bar bar-balanced"><h1 class = "title">Contacts</h1></div>
+         <ion-content>
+		    <ion-list class="list">
+		       <ion-item class="item" collection-repeat="contact in jobCtrl.getSelectedJob().contacts">
+		          <div ng-click = "jobCtrl.goToContact(contact)">{{contact.name}}</div>
+		       </ion-item>
+		    </ion-list>
+     	</ion-content>
+    </div>
+  </ion-content>
+</ion-view>
