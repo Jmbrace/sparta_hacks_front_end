@@ -1,9 +1,11 @@
-<ion-pane class="list list-inset" ng-controller= "registrationController as regis">
-  <label class="item item-input">
-      <input type="text" placeholder="Username" ng-model="regis.user.username">
-  </label>
-  <label class="item item-input">
-      <input type="password" placeholder="Password" ng-model="regis.user.password">
-  </label>Already Have An Account?<a ui-sref="login">Sign In!</a>
-<button class="button button-block button-calm" ng-click="regis.createProfile()">Register</button>
-</ion-pane>
+<ion-view class="padding">
+  <ion-pane class="list list-inset" ng-controller= "registrationController as regis">
+    <label class="item item-input">
+        <input type="text" placeholder="Username" ng-model="regis.user.username">
+    </label>
+    <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="regis.user.password">
+    </label>Already Have An Account?<a ui-sref="login">Sign In!</a>
+  <button class="button button-block button-calm" ng-click="regis.createProfile()">Register</button>
+  </ion-pane>
+</ion-view>

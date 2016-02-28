@@ -3,12 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'org' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var spartaApp = angular.module('org', ['ionic','ui.router'])
+var spartaApp = angular.module('org', ['ionic','ui.router']);
 
 spartaApp.config(function($stateProvider, $urlRouterProvider, $httpProvider){
-
-
-$urlRouterProvider.otherwise("/splash");
 
 $stateProvider
     .state('splash', {
@@ -23,22 +20,76 @@ $stateProvider
       url: "/register",
       templateUrl: "js/register/registrationPartial.html"
     })
-    .state('search', {
-      url: "/search",
-      templateUrl: "js/searchPage/searchPagePartial.html"
+    .state('home',{
+      url:"/home",
+      templateUrl:'js/home.html'
     })
-    .state('jobs', {
-      url: "/jobs",
-      templateUrl: "js/jobs/jobsMasterListPartial.html"
+    .state('home.search',{
+      url:'/search',
+      views:{
+        'search':{
+          templateUrl:'js/searchPage/searchPagePartial.html'
+        }
+      }
     })
-    .state('job', {
-      url: "/job",
-      templateUrl: "js/jobs/jobPartial.html"
+    .state('home.jobs',{
+      url:'/jobs',
+      views:{
+        'jobs':{
+          templateUrl:'js/jobs/jobsMasterListPartial.html'
+        }
+      }
     })
-    .state('contacts', {
-      url: "/contacts",
-      templateUrl: "js/contacts/contactsMasterListPartial.html"
+    .state('home.contacts',{
+      url:'/contacts',
+      views:{
+        'contacts':{
+          templateUrl:'js/contacts/contactsMasterListPartial.html'
+        }
+      }
     })
+    .state('home.jobs.jobId',{
+      url:'/jobs/:id',
+      views:{
+        'jobs':{
+          templateUrl:'js/jobs/jobPartial.html'
+        }
+      }
+    });
+
+    $urlRouterProvider.otherwise("/home");
+    // .state('search', {
+    //   url: "/search",
+    //   views:{
+    //     'home':{
+    //         templateUrl: "js/searchPage/searchPagePartial.html"
+    //     }
+    //   }
+    // })
+    // .state('jobs', {
+    //   url: "/jobs",
+    //   views:{
+    //     'home':{
+    //         templateUrl: "js/jobs/jobsMasterListPartial.html"
+    //     }
+    //   }
+    // })
+    // .state('job', {
+    //   url: "/job",
+    //   views:{
+    //     'home':{
+    //       templateUrl: "js/jobs/jobPartial.html"
+    //     }
+    //   }
+    // })
+    // .state('contacts', {
+    //   url: "/contacts",
+    //   views:{
+    //     'home':{
+    //       templateUrl: "js/contacts/contactsMasterListPartial.html"
+    //     }
+    //   }
+    // });
 });
 
 

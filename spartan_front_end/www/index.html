@@ -28,16 +28,24 @@
     <script src="js/searchPage/searchPageController.js"></script>
     <script src="js/jobs/jobsService.js"></script>
     <script src="js/jobs/jobsMasterListController.js"></script>
+    <script src="js/contacts/contactsService.js"></script>
     <script src="js/contacts/contactsMasterListController.js"></script>
     <script src="js/splash/splashController.js"></script>
     <script src="js/splash/splashService.js"></script>
     <script src="js/navBarController.js"></script>
 
 
+
   </head>
   <body ng-app="org">
-    <ion-pane>
-      <ion-nav-bar ng-controller = "navBarController as nav" class="bar-stable">
+
+    <div class = "bar bar-header bar-balanced"><h1 class = "title">Jobminder</h1></div>
+
+  <ion-content class = "has-header" ui-view></ion-content>
+
+
+    <!-- <ion-pane ui-view> -->
+      <!-- <ion-nav-bar ng-controller = "navBarController as nav" class="bar-stable">
       <ion-nav-buttons ng-show = "nav.showNav == 'true' ">
           <div ng-click = "nav.clickSearch()" class="button">Search</div>
           <div ng-click = "nav.clickJobs()" class="button">Jobs</div>
@@ -45,7 +53,7 @@
       </ion-nav-buttons>
       <h1 ng-show = "nav.showNav == 'false' " class="title">JobMinder</h1>
       </ion-nav-bar>
-      <ion-nav-view ui-view></ion-nav-view>
-    </ion-pane>
+      <ion-nav-view ui-view></ion-nav-view> -->
+    <!-- </ion-pane> -->
   </body>
 </html>
