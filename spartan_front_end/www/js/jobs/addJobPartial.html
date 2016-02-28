@@ -1,0 +1,19 @@
+<ion-view view-title="Manual Entry">
+  <ion-content class="padding" ng-controller="jobsMasterListController as jobsCtrl">
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" ng-model="jobsCtrl.jobToAdd.title">Job Title</span>
+        <input type="text" placeholder="Lead Software Engineer">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" ng-model="jobsCtrl.jobToAdd.companyName">Company Name</span>
+        <input type="text" placeholder="Google">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label" ng-model="jobsCtrl.jobToAdd.location">Location</span>
+        <input type="text" placeholder="Mountatin View, Ca">
+      </label>
+    </div>
+    <button ng-click="jobsCtrl.submitManual()" class="button button-block button-balanced">Add</button>
+  </ion-content>
+</ion-view>

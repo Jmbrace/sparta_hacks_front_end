@@ -32,6 +32,14 @@ $stateProvider
         }
       }
     })
+    .state('home.addJob',{
+      url:'/addjob',
+      views:{
+        'search':{
+          templateUrl:'js/jobs/addJobPartial.html'
+        }
+      }
+    })
     .state('home.jobs',{
       url:'/jobs',
       views:{
