@@ -1,6 +1,6 @@
 (function(){
 
-var JobsService = function() {
+var jobsService = function() {
     var jobModel = {};
 
     return {
@@ -17,8 +17,8 @@ var JobsService = function() {
         }
     }
 };
-JobsService.$inject = [];
+jobsService.$inject = [];
 
-angular.module('org').service('JobsService', JobsService);
+angular.module('org').service('jobsService', jobsService);
 
 })();

@@ -2,7 +2,7 @@
 
 var contactsMasterListController = function($scope){
 	vm = this;
-	vm.contacts = ["Yo momma","Yo woman", "Yo side chick", "Yo ex" ];
+	vm.contacts = ["contact 1","contact 2", "contact 3", "contact 4" ];
 
 
 	vm.login = function() {

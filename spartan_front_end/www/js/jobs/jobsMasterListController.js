@@ -2,9 +2,9 @@
 
 var jobsMasterListController = function($scope, $state, jobsService){
 	vm = this;
-	vm.jobs = ["Google Dev","Buttlicker", "vaginal infections", "booty" ];
+	vm.jobs = ["Job 1","Job 2", "Job 3", "Job 4" ];
 
-	vm.goToJob(job) = function() {
+	vm.goToJob = function(job) {
 		jobsService.setJob(job);
 		$state.go('job');
 	};
