@@ -1,6 +1,6 @@
 (function(){
 
-var AuthService = function($http,$cookies) {
+var AuthService = function($http, $window, $state) {
 var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
 
     return {
@@ -20,8 +20,8 @@ var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
             },
             data: {username: username, password: password}
         }).success(function (response, status, header){
+                $window.sessionStorage.showNav  = true;
       			$state.go('search');
-            //console.log($cookies.get('connect.sid'));
         }).error(function (response){
             //console.log("error");
         });
@@ -43,6 +43,7 @@ var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
             },
             data: {username: username, password: password}
         }).success(function (response){
+            $window.sessionStorage.showNav  = false;
             console.log("success")
         }).error(function (response){
             console.log("error");
@@ -50,27 +51,11 @@ var API_BASE_URL = "https://project-organize-jmitch0901.c9users.io/api";
         },
 
         loggedIn: function(callback) {
-            var signeIn = false;
-        $http({
-            withCredentials: true,
-            method: 'GET',
-            url: API_BASE_URL+"/me",
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            transformRequest: function(obj) {
-                var str = [];
-                for(var p in obj)
-                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                return str.join("&");
-            }
-        }).success(function (response){
-            callback(true);
-        }).error(function (response){
-            callback(false);
-        });
+
         }
     }
 };
-AuthService.$inject = ['$http', '$cookies'];
+AuthService.$inject = ['$http', '$window', '$state'];
 
 angular.module('org').service('AuthService', AuthService);
 

@@ -29,22 +29,22 @@
     <script src="js/jobs/jobsMasterListController.js"></script>
     <script src="js/contacts/contactsMasterListController.js"></script>
     <script src="js/splash/splashController.js"></script>
+    <script src="js/splash/splashService.js"></script>
+    <script src="js/navBarController.js"></script>
+
 
   </head>
   <body ng-app="org">
-
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <div ng-show = "loggedIn" class="button-bar">
-          <a class="button">First</a>
-          <a class="button">Second</a>
-          <a class="button">Third</a>
-        </div>
-        <h1 ng-show = "!loggedIn" class="title">Project Organize</h1>
-      </ion-header-bar>
-      <ion-content>
-      <div ui-view></div>
-      </ion-content>
+      <ion-nav-bar ng-controller = "navBarController as nav" ng-show = "nav.showNav == 'true' " class="bar-stable">
+      <ion-nav-buttons>
+          <div class="button">Search</div>
+          <div class="button">Jobs</div>
+          <div class="button">Contacts</div>
+      </ion-nav-buttons>
+      <h1  ng-show = "nav.showNav == 'false' " class="title">JobMinder</h1>
+      </ion-nav-bar>
+      <ion-nav-view ui-view></ion-nav-view>
     </ion-pane>
   </body>
 </html>

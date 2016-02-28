@@ -2,7 +2,7 @@
 <div class="list card">
 
  <ion-item class="item" collection-repeat="job in jobsctrl.jobs">
-    {{job}}
+    <div ng-click = "jobsctrl.goToJob(job)">{{job}}</div>
 </ion-item>
 </div>
 </ion-pane>

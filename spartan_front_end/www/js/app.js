@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'org' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var spartaApp = angular.module('org', ['ionic','ui.router','ngCookies'])
+var spartaApp = angular.module('org', ['ionic','ui.router'])
 
 spartaApp.config(function($stateProvider, $urlRouterProvider, $httpProvider){
 
@@ -30,6 +30,10 @@ $stateProvider
     .state('jobs', {
       url: "/jobs",
       templateUrl: "js/jobs/jobsMasterListPartial.html"
+    })
+    .state('job', {
+      url: "/job",
+      templateUrl: "js/jobs/jobPartial.html"
     })
     .state('contacts', {
       url: "/contacts",
