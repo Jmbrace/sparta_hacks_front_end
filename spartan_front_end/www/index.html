@@ -37,8 +37,8 @@
   </head>
   <body ng-app="org">
     <ion-pane>
-      <ion-nav-bar ng-controller = "navBarController as nav" ng-show = "nav.showNav == 'true' " class="bar-stable">
-      <ion-nav-buttons>
+      <ion-nav-bar ng-controller = "navBarController as nav" class="bar-stable">
+      <ion-nav-buttons ng-show = "nav.showNav == 'true' ">
           <div ng-click = "nav.clickSearch()" class="button">Search</div>
           <div ng-click = "nav.clickJobs()" class="button">Jobs</div>
           <div ng-click = "nav.clickContacts()" class="button">Contacts</div>
