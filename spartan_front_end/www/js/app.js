@@ -82,7 +82,7 @@ $stateProvider
     });
 
 
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/splash");
     // .state('search', {
     //   url: "/search",
     //   views:{
